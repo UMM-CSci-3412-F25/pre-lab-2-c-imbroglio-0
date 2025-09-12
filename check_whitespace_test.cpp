@@ -11,25 +11,33 @@ TEST(strip, EmptyString) {
 TEST(strip, NoWhitespace) {
     char *result = strip("frog");
     ASSERT_STREQ("frog", result);
-    free(result);
+    if (strcmp(result, "") != 0){
+        free(result);
+    }
 }
 
 TEST(strip, WhitespaceOnFront) {
     char *result = strip("   frog");
     ASSERT_STREQ("frog", result);
-    free(result);
+    if (strcmp(result, "") != 0){
+        free(result);
+    }
 }
 
 TEST(strip, WhitespaceOnBack) {
     char *result = strip("frog  ");
     ASSERT_STREQ("frog", result);
-    free(result);
-}
+    if (strcmp(result, "") != 0){
+        free(result);
+    }
+}    
 
 TEST(strip, WhitespaceOnBothEnds) {
     char *result = strip("  frog     ");
     ASSERT_STREQ("frog", result);
-    free(result);
+    if (strcmp(result, "") != 0){
+        free(result);
+    }
 }
 
 TEST(is_clean, EmptyString) {
