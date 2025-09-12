@@ -5,8 +5,9 @@
 TEST(strip, EmptyString) {
     char *result = strip("");
     ASSERT_STREQ("", result);
-    free(result);
-}
+    if (strcmp(result, "") != 0){
+        free(result);
+    }
 
 TEST(strip, NoWhitespace) {
     char *result = strip("frog");
