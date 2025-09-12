@@ -27,6 +27,7 @@ char const *strip(char const *str) {
   // If num_spaces >= size then that means that the string
   // consisted of nothing but spaces, so we'll return the
   // empty string.
+
   if (num_spaces >= size) {
     return "";
   }
