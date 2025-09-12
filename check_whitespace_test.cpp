@@ -5,40 +5,30 @@
 TEST(strip, EmptyString) {
     char *result = strip("");
     ASSERT_STREQ("", result);
-    if (strcmp(result, "") != 0){
-        free(result);
-    }
+}
 
 TEST(strip, NoWhitespace) {
     char *result = strip("frog");
     ASSERT_STREQ("frog", result);
-    if (strcmp(result, "") != 0){
-        free(result);
-    }
+    free(result);
 }
 
 TEST(strip, WhitespaceOnFront) {
     char *result = strip("   frog");
     ASSERT_STREQ("frog", result);
-    if (strcmp(result, "") != 0){
-        free(result);
-    }
+    free(result);
 }
 
 TEST(strip, WhitespaceOnBack) {
     char *result = strip("frog  ");
     ASSERT_STREQ("frog", result);
-    if (strcmp(result, "") != 0){
-        free(result);
-    }
-}    
+    free(result);
+}
 
 TEST(strip, WhitespaceOnBothEnds) {
     char *result = strip("  frog     ");
     ASSERT_STREQ("frog", result);
-    if (strcmp(result, "") != 0){
-        free(result);
-    }
+    free(result);
 }
 
 TEST(is_clean, EmptyString) {
