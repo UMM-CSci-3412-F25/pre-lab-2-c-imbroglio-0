@@ -61,7 +61,7 @@ int is_clean(char const *str) {
   // greater than the second.
   int result = strcmp(str, cleaned);
 
-  if (result != 0 && strcmp(cleaned, "") != 0){
+  if (str != cleaned && strcmp(cleaned, "") != 0){
     free((void *)cleaned);
   }
   return result == 0;
